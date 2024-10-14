@@ -7,5 +7,5 @@ export enum ModelNames {
     PRODUCT = 'Product',
     SUPPLIER = 'Supplier',
     CART = 'Cart',
-    Order = 'Order',
+    ORDER = 'Order',
   }

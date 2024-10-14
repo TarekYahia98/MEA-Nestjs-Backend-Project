@@ -184,7 +184,7 @@ export class UserAuthService extends BaseAuthService {
 
     // await this.sesService.sendEmail({
     //   emails: email,
-    //   subject: 'EMA Email Verification',
+    //   subject: 'MEA Email Verification',
     //   body: `Your verification code is ${code}. This code expires in 10 minutes.`,
     // });
   }
