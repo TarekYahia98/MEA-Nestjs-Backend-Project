@@ -1,0 +1,1 @@
+export * from './is-birth-date.decorator';

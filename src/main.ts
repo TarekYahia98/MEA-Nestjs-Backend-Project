@@ -1,8 +1,4 @@
-import { NestFactory } from '@nestjs/core';
-import { AppModule } from './app.module';
+import { AppModule } from "./app.module";
+import { appBootstrapLoader } from "./common/loaders/app-bootstrap.loader";
 
-async function bootstrap() {
-  const app = await NestFactory.create(AppModule);
-  await app.listen(3000);
-}
-bootstrap();
+appBootstrapLoader(AppModule, { enabled: true, config: { version: '1.0.0' } });
