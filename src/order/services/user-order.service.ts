@@ -1,6 +1,7 @@
 import { Injectable, Inject } from '@nestjs/common';
 import { InjectConnection } from '@nestjs/mongoose';
 import { Connection, HydratedDocument, Types } from 'mongoose';
+import { ICartModel } from 'src/cart/schemas';
 import { ModelNames } from 'src/common/constants';
 import { IUserModel } from 'src/user/schemas';
   

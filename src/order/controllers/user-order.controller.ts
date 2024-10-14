@@ -12,12 +12,12 @@ import {
     ApiResponse,
     ApiTags,
   } from '@nestjs/swagger';
-  import {
-    OrderIdParamDto,
-  } from '@shared/dto/order-id-param.dto';
 import { CustomResponse } from 'src/common/classes';
 import { Persona } from 'src/common/decorators';
 import { UserJwtPersona } from 'src/common/interfaces';
+import { OrderIdParamDto } from 'src/shared/dto/order-id-param.dto';
+import { UserOrderService } from '../services/user-order.service';
+import { BasePaginationQuery } from 'src/common/dtos/base-pagination.dto';
 
   
   @Controller('order')
@@ -105,12 +105,12 @@ import { UserJwtPersona } from 'src/common/interfaces';
     async cancelOrder(
       @Persona() userJWT: UserJwtPersona,
       @Param() param: OrderIdParamDto,
-      @Body() body: CancelOrderDto,
+      // @Body() body: CancelOrderDto,
     ) {
       const result = await this.userOrderService.cancelOrder(
         userJWT._id,
         param,
-        body,
+        // body,
       );
   
       return new CustomResponse().success({
@@ -136,13 +136,13 @@ import { UserJwtPersona } from 'src/common/interfaces';
       @Persona() userJWT: UserJwtPersona,
       @Param('orderId') orderId: string, // Extract orderId from route parameters
       @Param('itemId') itemId: string, // Extract itemId from route parameters
-      @Body() body: CancelOrderItemDto,
+      // @Body() body: CancelOrderItemDto,
     ) {
       const result = await this.userOrderService.cancelOrderItem(
         userJWT._id,
         { orderId }, // Pass orderId as an object
         { itemId }, // Pass itemId as an object
-        body,
+        // body,
       );
   
       return new CustomResponse().success({
