@@ -1,9 +1,11 @@
 import { Injectable, Inject } from '@nestjs/common';
 import { InjectConnection } from '@nestjs/mongoose';
-import { Connection, HydratedDocument, Types } from 'mongoose';
+import { Connection} from 'mongoose';
 import { ICartModel } from 'src/cart/schemas';
 import { ModelNames } from 'src/common/constants';
 import { IUserModel } from 'src/user/schemas';
+import { IOrderModel } from '../schemas/order.type';
+import { IBaseProductModel } from 'src/product/schemas/product.type';
   
   @Injectable()
   export class UserOrderService {
@@ -12,10 +14,17 @@ import { IUserModel } from 'src/user/schemas';
       @Inject(ModelNames.ORDER) private orderModel: IOrderModel,
       @Inject(ModelNames.CART) private cartModel: ICartModel,
       @Inject(ModelNames.USER) private userModel: IUserModel,
-      @Inject(ModelNames.PRODUCT) private productModel: IProductModel,
+      @Inject(ModelNames.BASE_PRODUCT) private baseProductModel: IBaseProductModel,
     ) {}
 
+async placeOrder(){}
 
+async checkout(){}
 
+async getOrderDetailsById(){}
+
+async cancelOrder(){}
+
+async cancelOrderItem(){}
 
 }

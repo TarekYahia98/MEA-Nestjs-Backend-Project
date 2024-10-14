@@ -2,6 +2,7 @@ import { FactoryProvider, Module } from '@nestjs/common';
 import { EventEmitter2 } from '@nestjs/event-emitter';
 import { getConnectionToken } from '@nestjs/mongoose';
 import { ModelNames } from 'src/common/constants';
+import { orderSchemaFactory } from 'src/order/schemas/order.schema';
 
 const OrderMongooseDynamicModule: FactoryProvider = {
   provide: ModelNames.ORDER,

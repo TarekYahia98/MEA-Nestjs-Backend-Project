@@ -29,10 +29,10 @@ import { BasePaginationQuery } from 'src/common/dtos/base-pagination.dto';
     @ApiBearerAuth()
     @ApiOperation({ summary: 'Place an order by the current logged-in user' })
     async placeOrder(@Persona() userJWT: UserJwtPersona) {
-      const newOrder = await this.userOrderService.placeOrder(userJWT._id);
+      // const newOrder = await this.userOrderService.placeOrder(userJWT._id);
   
       return new CustomResponse().success({
-        payload: { data: newOrder },
+        // payload: { data: newOrder },
         statusCode: 201,
       });
     }
@@ -44,10 +44,10 @@ import { BasePaginationQuery } from 'src/common/dtos/base-pagination.dto';
         'Fetch cart items and calculate totals for the current logged-in user',
     })
     async checkout(@Persona() userJWT: UserJwtPersona) {
-      const checkoutData = await this.userOrderService.checkout(userJWT._id);
+      // const checkoutData = await this.userOrderService.checkout(userJWT._id);
   
       return new CustomResponse().success({
-        payload: { data: checkoutData },
+        // payload: { data: checkoutData },
         statusCode: 200,
       });
     }
@@ -62,10 +62,10 @@ import { BasePaginationQuery } from 'src/common/dtos/base-pagination.dto';
       @Persona() userJWT: UserJwtPersona,
       @Query() query: BasePaginationQuery,
     ) {
-      const result = await this.userOrderService.getAllOrders(userJWT._id, query);
+      // const result = await this.userOrderService.getAllOrders(userJWT._id, query);
   
       return new CustomResponse().success({
-        payload: { data: result },
+        // payload: { data: result },
       });
     }
   
@@ -79,8 +79,8 @@ import { BasePaginationQuery } from 'src/common/dtos/base-pagination.dto';
       @Param() param: OrderIdParamDto,
     ) {
       const result = await this.userOrderService.getOrderDetailsById(
-        userJWT._id,
-        param,
+        // userJWT._id,
+        // param,
       );
   
       return new CustomResponse().success({
@@ -108,8 +108,8 @@ import { BasePaginationQuery } from 'src/common/dtos/base-pagination.dto';
       // @Body() body: CancelOrderDto,
     ) {
       const result = await this.userOrderService.cancelOrder(
-        userJWT._id,
-        param,
+        // userJWT._id,
+        // param,
         // body,
       );
   
@@ -139,9 +139,9 @@ import { BasePaginationQuery } from 'src/common/dtos/base-pagination.dto';
       // @Body() body: CancelOrderItemDto,
     ) {
       const result = await this.userOrderService.cancelOrderItem(
-        userJWT._id,
-        { orderId }, // Pass orderId as an object
-        { itemId }, // Pass itemId as an object
+        // userJWT._id,
+        // { orderId }, // Pass orderId as an object
+        // { itemId }, // Pass itemId as an object
         // body,
       );
   
