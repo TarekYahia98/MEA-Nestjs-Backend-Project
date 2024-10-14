@@ -2,6 +2,7 @@ import { RedisModule, RedisModuleOptions } from '@liaoliaots/nestjs-redis';
 import { Module } from '@nestjs/common';
 import { RouterModule } from '@nestjs/core';
 import { AppConfig } from './common/services';
+import { CommonModule } from './common/common.module';
 
 
 @Module({
@@ -17,6 +18,26 @@ import { AppConfig } from './common/services';
     // RouterModule.register([{ path: 'product', module: ProductModule }]),
     // RouterModule.register([{ path: 'cart', module: CartModule }]),
 
+    CommonModule.registerAsync({
+      appConfig: {
+        appShortName: 'mea-project',
+      },
+      useFactory: {
+        default: () => ({
+          memoryConfig: {
+            minHeapSizeInBytes: 512 * 1024 * 1024,
+            maxHeapSizeInBytes: 4096 * 1024 * 1024,
+          },
+        }),
+        mongoose: (appConfig: AppConfig) => ({
+          uri: appConfig.MONGODB_URL,
+        }),
+      },
+      inject: {
+        mongoose: [AppConfig],
+        default: [],
+      },
+    }),
 
     RedisModule.forRootAsync({
       imports: [],
