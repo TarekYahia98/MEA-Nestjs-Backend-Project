@@ -19,12 +19,19 @@ export const UserSchema = new Schema<User, IUserModel, IUserInstanceMethods>(
       required: true,
     },
 
-    email: {
+    phoneNumber: {
       type: String,
       lowercase: true,
       required: true,
       unique: true,
     },
+
+    email: {
+        type: String,
+        lowercase: true,
+        required: true,
+        unique: true,
+      },
 
     password: {
       type: String,
@@ -34,6 +41,21 @@ export const UserSchema = new Schema<User, IUserModel, IUserInstanceMethods>(
     address: {
       type: UserAddressSchema,
     },
+
+    googleId: {
+        type: String,
+        required: false,
+      },
+  
+    appleId: {
+        type: String,
+        required: false,
+      },
+
+    birthDate: {
+        type: String,
+        required: false,
+      },
 
     settings: {
       type: UserSettingsSubSchema,
@@ -57,6 +79,7 @@ export const UserSchema = new Schema<User, IUserModel, IUserInstanceMethods>(
 );
 
 export function userSchemaFactory(connection: Connection, eventEmitter: EventEmitter2) {
+  UserSchema.index({ phoneNumber: 1 }, { unique: true });
   UserSchema.index({ email: 1 }, { unique: true });
   UserSchema.index({ deletedAt: 1 });
 

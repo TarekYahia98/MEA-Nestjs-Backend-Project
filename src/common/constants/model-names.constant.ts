@@ -4,7 +4,8 @@ export enum ModelNames {
     USER = 'User',
     PENDING_USER = 'PendingUser',
     CATEGORY = 'Category',
-    SUB_CATEGORY = 'SubCategory',
     PRODUCT = 'Product',
     SUPPLIER = 'Supplier',
+    CART = 'Cart',
+    Order = 'Order',
   }
