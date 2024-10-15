@@ -1,9 +1,9 @@
 import { ApiProperty } from "@nestjs/swagger";
 import { IsMongoId, IsString } from "class-validator";
 
-export class CategoryIdParamDto {
-    @ApiProperty({ description: 'ID of the category' })
+export class ProductIdParamDto {
+    @ApiProperty({ description: 'ID of the product' })
     @IsString()
     @IsMongoId()
-    categoryId: string;
+    productId: string;
   }
