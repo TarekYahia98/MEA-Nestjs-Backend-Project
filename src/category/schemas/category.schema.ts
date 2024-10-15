@@ -3,8 +3,8 @@ import { Schema, Connection, HydratedDocument } from "mongoose";
 import { BaseSchema } from "src/base";
 import { ModelNames } from "src/common/constants";
 import { validateSchema } from "src/common/helpers";
-import { CategoryEventsEnum } from "./category.enum";
-import { Category, ICategoryModel, ICategoryInstanceMethods } from "./category.type";
+import { CategoryEventsEnum } from "./schemas/category.enum";
+import { Category, ICategoryModel, ICategoryInstanceMethods } from "./schemas/category.type";
 import { LocalizedTextSchema } from "src/common/localized-text/localized-text.schema";
 
 

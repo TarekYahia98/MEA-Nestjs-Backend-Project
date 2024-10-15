@@ -1,7 +1,7 @@
 import { FactoryProvider, Module } from '@nestjs/common';
 import { EventEmitter2 } from '@nestjs/event-emitter';
 import { getConnectionToken } from '@nestjs/mongoose';
-import { categorySchemaFactory } from 'src/category/category.schema';
+import { categorySchemaFactory } from 'src/category/schemas/category.schema';
 import { ModelNames } from 'src/common/constants';
 
 const CategoryMongooseDynamicModule: FactoryProvider = {

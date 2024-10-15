@@ -1,6 +1,6 @@
 import { IsBoolean, IsObject, IsUrl, ValidateNested } from 'class-validator';
 import { Model } from 'mongoose';
-import { BaseModel, IBaseInstanceMethods } from '../base';
+import { BaseModel, IBaseInstanceMethods } from '../../base';
 import { LocalizedText } from 'src/common/localized-text/localized-text.type';
 
 export class Category extends BaseModel<Category> {
