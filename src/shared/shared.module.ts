@@ -1,5 +1,5 @@
 import { Module } from '@nestjs/common';
-import { AdminMongooseModule } from 'src/common/mongoose/admin/admin.dynamic-module';
+// import { AdminMongooseModule } from 'src/common/mongoose/admin/admin.dynamic-module';
 import { CartMongooseModule } from 'src/common/mongoose/cart/cart.dynamic-module';
 import { CategoryMongooseModule } from 'src/common/mongoose/category/category.dynamic-module';
 import { OrderMongooseModule } from 'src/common/mongoose/order/order.dynamic-module';
@@ -10,7 +10,7 @@ import { AppConfig } from 'src/common/services';
 
 const imports = [
   UserMongooseModule,
-  AdminMongooseModule,
+  // AdminMongooseModule,
   SupplierMongooseModule,
   ProductMongooseModule,
   CartMongooseModule,

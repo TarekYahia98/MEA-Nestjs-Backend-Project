@@ -53,6 +53,10 @@ import { TransformObjectId } from 'src/common/decorators';
     @IsInstance(Types.ObjectId)
     @TransformObjectId()
     category: Types.ObjectId;
+
+    @IsInstance(Types.ObjectId)
+    @TransformObjectId()
+    supplier: Types.ObjectId;
   
     @IsBoolean()
     isArchivedByCategory: boolean;

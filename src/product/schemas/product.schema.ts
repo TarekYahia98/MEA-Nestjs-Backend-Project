@@ -27,6 +27,7 @@ export const BaseProductSchema = new Schema<BaseProduct, IBaseProductModel, IBas
       default: false,
     },
     category: { type: Schema.Types.ObjectId, ref: ModelNames.CATEGORY, required: true },
+    supplier: { type: Schema.Types.ObjectId, ref: ModelNames.SUPPLIER, required: true },
     isArchivedByCategory: {
       type: Boolean,
       default: false,
