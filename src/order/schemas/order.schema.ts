@@ -17,9 +17,15 @@ export const OrderSchema = new Schema<Order, IOrderModel, IOrderInstanceMethods>
     },
 
     user: {
-        type: ExtendedUserSchema,
-        required: true,
+      type: ExtendedUserSchema,
+      required: true,
       },
+
+    supplier: { 
+      type: Schema.Types.ObjectId,
+      ref: ModelNames.SUPPLIER,
+      required: true 
+    },
 
     rating: {
       type: Number,

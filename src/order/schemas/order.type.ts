@@ -31,6 +31,10 @@ import { ExtendedUser } from './subschemas/extended-user/extended-user.type';
     @ValidateNested()
     @Type(() => ExtendedUser)
     user: ExtendedUser;
+
+    @IsInstance(Types.ObjectId)
+    @TransformObjectId()
+    supplier: Types.ObjectId;
   
     @ApiPropertyOptional()
     @IsInt()
